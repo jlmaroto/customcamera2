@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:rim="http://www.blackberry.com/ns/widgets"
+	id="com.peanutbuttercolective.custom-camera"
+	version="0.0.1">
+
+<name>Custom Camera</name>
+<description>PhoneGap plugin to support a custom camera overlay and camera roll picker</description>
+<author>Jose Luis Maroto</author>
+
+<info>
+	Uses the DBCamera from Daniele Bogo (https://github.com/danielebogo/DBCamera)
+</info>
+
+<js-module src="www/js/custom_camera2.js" name="CustomCamera2">
+	<clobbers target="navigator.CustomCamera2" />
+</js-module>
+
+<engines>
+	<engine name="cordova" version=">=3.1.0" />
+</engines>
+
+<platform name="ios">
+
+	<!-- config file -->
+	<config-file target="config.xml" parent="/*">
+		<feature name="CustomCamera2">
+			<param name="ios-package" value="CustomCamera2" />
+		</feature>
+	</config-file>
+
+	<!-- core CustomCamera header and source files -->
+	<header-file src="platforms/ios/Classes/CustomCamera2.h" />
+	<source-file src="platforms/ios/Classes/CustomCamera2.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraContainer.h" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraImageView.h" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraManager.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraSegueViewController.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCollectionViewCell.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBLibraryManager.m" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraContainer.m" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraImageView.m" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraManager.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraView.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCollectionViewCell.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraDelegate.h" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraLibrary.h" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraSegueView.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraView.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCollectionViewFlowLayout.h" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraGridView.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraLibrary.m" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraSegueView.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraViewController.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCollectionViewFlowLayout.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/UIImage+Crop.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraGridView.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraMacros.h" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBCameraSegueViewController.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/DBCameraViewController.m" />
+	<header-file src="platforms/ios/Classes/DBCamera/DBLibraryManager.h" />
+	<source-file src="platforms/ios/Classes/DBCamera/UIImage+Crop.m" />
+        <resource-file src="platforms/ios/Classes/DBCamera/Localizations" />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/DBCameraImages.xcassets" />
+
+</platform>
+
+</plugin>
