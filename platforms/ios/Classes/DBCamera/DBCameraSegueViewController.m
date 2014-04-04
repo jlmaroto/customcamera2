@@ -44,10 +44,10 @@
     
     [_containerView.imageView setImage:self.capturedImage];
     
-    UIImage *thumb=[UIImage createRoundedRectImage:self.capturedImage size:CGSizeMake(63.0f,63.0f) roundRadius:4 ];
+/*    UIImage *thumb=[UIImage createRoundedRectImage:self.capturedImage size:CGSizeMake(63.0f,63.0f) roundRadius:4 ];
     for (int i=0; i<4; i++) {
         [[_containerView filterButton:i ] setBackgroundImage:thumb forState:UIControlStateNormal];
-    }
+    }*/
     
     CGFloat newWidth = [self getNewWidth];
     CGFloat newX = ((CGRectGetWidth([[UIScreen mainScreen] bounds])) * .5) - (newWidth * .5);

@@ -78,11 +78,11 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
         
         _bottomStripe = [[StripeView alloc] initWithFrame:(CGRect){ 0, 385, CGRectGetWidth(frame), CGRectGetHeight(frame)-385 }];
         [_bottomStripe setHidden:YES];
-        for(int i=0;i<4;i++){
+/*        for(int i=0;i<4;i++){
             [_bottomStripe addSubview:[self filterButton:i]];
             [_filterButtons[i] addTarget:self action:@selector(useFilterAction:) forControlEvents:UIControlEventTouchUpInside];
         }
-
+*/
         [self addSubview:_bottomStripe];
         [self setCropMode:YES];
     }
