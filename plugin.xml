@@ -2,10 +2,10 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:rim="http://www.blackberry.com/ns/widgets"
-	id="com.peanutbuttercolective.custom-camera"
+	id="com.peanutbuttercolective.custom-camera2"
 	version="0.0.1">
 
-<name>Custom Camera</name>
+<name>Custom Camera 2</name>
 <description>PhoneGap plugin to support a custom camera overlay and camera roll picker</description>
 <author>Jose Luis Maroto</author>
 
