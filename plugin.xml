@@ -61,7 +61,10 @@
 	<source-file src="platforms/ios/Classes/DBCamera/DBCameraViewController.m" />
 	<header-file src="platforms/ios/Classes/DBCamera/DBLibraryManager.h" />
 	<source-file src="platforms/ios/Classes/DBCamera/UIImage+Crop.m" />
-        <source-file src="platforms/ios/Classes/DBCamera/Localizations" />
+        
+	<source-file src="platforms/ios/Classes/DBCamera/Localizations/es.lproj/DBCamera.strings" />
+	<source-file src="platforms/ios/Classes/DBCamera/Localizations/en.lproj/DBCamera.strings" />
+	<source-file src="platforms/ios/Classes/DBCamera/Localizations/it.lproj/DBCamera.strings" />
         <resource-file src="platforms/ios/Classes/DBCamera/Resources/DBCameraImages.xcassets" />
 	
 	<framework src="QuartzCore.framework" />
