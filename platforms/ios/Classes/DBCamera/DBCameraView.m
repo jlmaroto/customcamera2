@@ -144,7 +144,7 @@
 {
     if ( !_triggerButton ) {
         _triggerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_triggerButton setImage:[UIImage imageNamed:@"trigger"] forState:UIControlStateNormal];
+        [_triggerButton setImage:[UIImage imageNamed:@"CC2_trigger"] forState:UIControlStateNormal];
         [_triggerButton setFrame:(CGRect){ 0, 0, 70, 70 }];
         [_triggerButton setCenter:(CGPoint){ CGRectGetMidX(self.bottomContainerBar.bounds), 50 }];
         [_triggerButton addTarget:self action:@selector(triggerAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -158,7 +158,7 @@
     if ( !_skipButton ) {
         _skipButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_skipButton setBackgroundColor:[UIColor clearColor]];
-        [_skipButton setImage:[UIImage imageNamed:@"skip"] forState:UIControlStateNormal];
+        [_skipButton setImage:[UIImage imageNamed:@"CC2_skip"] forState:UIControlStateNormal];
         [_skipButton setFrame:(CGRect){ CGRectGetWidth(self.bounds) - 90,  50 -16.25f, 62.5f, 32.5f }];
         [_skipButton addTarget:self action:@selector(skip) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -171,7 +171,7 @@
     if ( !_closeButton ) {
         _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_closeButton setBackgroundColor:[UIColor clearColor]];
-        [_closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [_closeButton setImage:[UIImage imageNamed:@"CC2_close"] forState:UIControlStateNormal];
         [_closeButton setFrame:(CGRect){ 25,  17.5f, 30, 30 }];
         [_closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -184,8 +184,8 @@
     if ( !_cameraButton ) {
         _cameraButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_cameraButton setBackgroundColor:[UIColor clearColor]];
-        [_cameraButton setImage:[UIImage imageNamed:@"flip"] forState:UIControlStateNormal];
-        [_cameraButton setImage:[UIImage imageNamed:@"flipSelected"] forState:UIControlStateSelected];
+        [_cameraButton setImage:[UIImage imageNamed:@"CC2_flip"] forState:UIControlStateNormal];
+        [_cameraButton setImage:[UIImage imageNamed:@"CC2_flipSelected"] forState:UIControlStateSelected];
         [_cameraButton setFrame:(CGRect){ 0, 0, 30, 30 }];
         [_cameraButton setCenter:(CGPoint){ CGRectGetMidX(self.topContainerBar.bounds), CGRectGetMidY(self.topContainerBar.bounds) }];
         [_cameraButton addTarget:self action:@selector(changeCamera:) forControlEvents:UIControlEventTouchUpInside];
@@ -200,7 +200,7 @@
         self.flashMode=0;
         _flashButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_flashButton setBackgroundColor:[UIColor clearColor]];
-        [_flashButton setImage:[UIImage imageNamed:@"flash-auto"] forState:UIControlStateNormal];
+        [_flashButton setImage:[UIImage imageNamed:@"CC2_flash-auto"] forState:UIControlStateNormal];
         [_flashButton setFrame:(CGRect){ CGRectGetWidth(self.bounds) - 78, 17.5f, 53, 30 }];
         [_flashButton addTarget:self action:@selector(flashTriggerAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -213,8 +213,8 @@
     if ( !_gridButton ) {
         _gridButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_gridButton setBackgroundColor:[UIColor clearColor]];
-        [_gridButton setImage:[UIImage imageNamed:@"cameraGridNormal"] forState:UIControlStateNormal];
-        [_gridButton setImage:[UIImage imageNamed:@"cameraGridSelected"] forState:UIControlStateSelected];
+        [_gridButton setImage:[UIImage imageNamed:@"CC2_cameraGridNormal"] forState:UIControlStateNormal];
+        [_gridButton setImage:[UIImage imageNamed:@"CC2_cameraGridSelected"] forState:UIControlStateSelected];
         [_gridButton setFrame:(CGRect){ 0, 0, 30, 30 }];
         [_gridButton setCenter:(CGPoint){ CGRectGetMidX(self.topContainerBar.bounds), CGRectGetMidY(self.topContainerBar.bounds) }];
         [_gridButton addTarget:self action:@selector(addGridToCameraAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -343,20 +343,20 @@
         switch (self.flashMode) {
             case 0:
                 [_delegate triggerFlashForMode: AVCaptureFlashModeAuto];
-                [_flashButton setImage:[UIImage imageNamed:@"flash-auto"] forState:UIControlStateNormal];
+                [_flashButton setImage:[UIImage imageNamed:@"CC2_flash-auto"] forState:UIControlStateNormal];
                 break;
             case 1:
                 [_delegate triggerFlashForMode: AVCaptureFlashModeOn];
-                [_flashButton setImage:[UIImage imageNamed:@"flash"] forState:UIControlStateNormal];
+                [_flashButton setImage:[UIImage imageNamed:@"CC2_flash"] forState:UIControlStateNormal];
                 break;
             case 2:
                 [_delegate triggerFlashForMode: AVCaptureFlashModeOff];
-                [_flashButton setImage:[UIImage imageNamed:@"flash-no"] forState:UIControlStateNormal];
+                [_flashButton setImage:[UIImage imageNamed:@"CC2_flash-no"] forState:UIControlStateNormal];
                 break;
                 
             default:
                 [_delegate triggerFlashForMode: AVCaptureFlashModeAuto];
-                [_flashButton setImage:[UIImage imageNamed:@"flash-auto"] forState:UIControlStateNormal];
+                [_flashButton setImage:[UIImage imageNamed:@"CC2_flash-auto"] forState:UIControlStateNormal];
                 break;
         }
         

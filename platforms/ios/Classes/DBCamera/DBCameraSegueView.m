@@ -162,8 +162,8 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
     if ( !_cropButton) {
         _cropButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_cropButton setBackgroundColor:[UIColor clearColor]];
-        [_cropButton setImage:[UIImage imageNamed:@"Crop"] forState:UIControlStateNormal];
-        [_cropButton setImage:[UIImage imageNamed:@"CropSelected"] forState:UIControlStateSelected];
+        [_cropButton setImage:[UIImage imageNamed:@"CC2_Crop"] forState:UIControlStateNormal];
+        [_cropButton setImage:[UIImage imageNamed:@"CC2_CropSelected"] forState:UIControlStateSelected];
         [_cropButton setFrame:(CGRect){ CGRectGetMidX(self.bounds) - 15, 15, 30, 30 }];
     }
     
