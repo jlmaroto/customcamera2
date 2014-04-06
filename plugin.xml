@@ -64,24 +64,24 @@
         
 	<resource-file src="platforms/ios/Classes/DBCamera/Localizations/es.lproj/DBCamera.strings"  />
         <resource-file src="platforms/ios/Classes/DBCamera/Resources/DBCameraImages.xcassets"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/Crop.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/Crop@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CropSelected.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CropSelected@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/cameraGridNormal.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/cameraGridNormal@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/cameraGridSelected.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/cameraGridSelected@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/close@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/flash-auto@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/flash-no@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/flash@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/flip@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/flipSelected.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/flipSelected@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/skip@2x.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/trigger.png"  />
-        <resource-file src="platforms/ios/Classes/DBCamera/Resources/trigger@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_Crop.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_Crop@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_CropSelected.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_CropSelected@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_cameraGridNormal.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_cameraGridNormal@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_cameraGridSelected.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_cameraGridSelected@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_close@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_flash-auto@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_flash-no@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_flash@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_flip@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_flipSelected.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_flipSelected@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_skip@2x.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_trigger.png"  />
+        <resource-file src="platforms/ios/Classes/DBCamera/Resources/CC2_trigger@2x.png"  />
 	
 	<framework src="QuartzCore.framework" />
 </platform>
