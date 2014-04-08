@@ -67,7 +67,7 @@
             void (^assetEnumerator)(ALAsset *, NSUInteger, BOOL *) = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
                 if ( result ) {
                     if( [[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto] ) {
-                        [items addObject:[[result defaultRepresentation] url]];
+                        [items insertObject:[[result defaultRepresentation] url] atIndex:0];
                         assetResult = result;
                     }
                 }

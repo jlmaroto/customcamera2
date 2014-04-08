@@ -159,7 +159,8 @@
         if(backVector.x!=0||backVector.y!=0){
             NSLog(@"back");
             [piece.superview setTransform:CGAffineTransformTranslate(piece.superview.transform, -backVector.x, -backVector.y)];
-            
+            backVector.x=0;
+            backVector.y=0;
         }
     }
     
