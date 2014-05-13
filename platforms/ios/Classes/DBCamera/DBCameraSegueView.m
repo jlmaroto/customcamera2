@@ -65,7 +65,7 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
         
         _imageView = [[DBCameraImageView alloc] initWithFrame:(CGRect){ 0, 65, 320,320}];
         [_imageView setBackgroundColor:[UIColor clearColor]];
-        [_imageView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        //[_imageView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
         [_imageView setContentMode:UIViewContentModeScaleToFill];
         [transformView addSubview:_imageView];
         [self addSubview:transformView];

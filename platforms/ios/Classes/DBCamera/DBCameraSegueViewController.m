@@ -92,9 +92,9 @@
 {
     if ( [cameraView isCropModeOn] ) {
         if ( [_delegate respondsToSelector:@selector(captureImageDidFinish:withMetadata:)] ){
-            NSLog(@"%@",self.capturedImageMetadata.debugDescription );
             //NSNumber *orientation= [NSNumber numberWithInt: 0] ;
             //[self.capturedImageMetadata setValue:orientation forKey:@"Orientation"];
+            
             [_delegate captureImageDidFinish:[[UIImage screenshotFromView:self.view] croppedImage:(CGRect){ 0, 130, 640, 640 }] withMetadata:self.capturedImageMetadata];
         }
     } else if ( [_delegate respondsToSelector:@selector(captureImageDidFinish:withMetadata:)] )

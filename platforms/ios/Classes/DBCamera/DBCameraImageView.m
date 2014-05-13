@@ -12,13 +12,9 @@
 #define SIZE_LIMIT 320
 
 @interface DBCameraImageView () <UIGestureRecognizerDelegate> {
-    CGFloat _tx;
-	CGFloat _ty;
-	
-    CGFloat _rotation;
+    
     CGFloat _lastRotation;
     
-    CGFloat _scale;
     CGFloat _lastScale;
     
 	CGFloat _firstX;
@@ -97,6 +93,8 @@
     _ty = 0.0f;
     _scale = 1.0f;
     _rotation=0.0f;
+    backVector.x=0;
+    backVector.y=0;
     
     self.superview.transform= CGAffineTransformMakeTranslation(0, 0);
     self.transform = CGAffineTransformMakeTranslation(0, 0);
@@ -126,7 +124,8 @@
     }
     
 	[self setTransform:newTransform];
-    
+    backVector.x=0;
+    backVector.y=0;
 	_lastScale = [gesture scale];
 }
 
@@ -157,7 +156,6 @@
         [gesture setTranslation:CGPointZero inView:piece.superview];
     }else if(gesture.state==UIGestureRecognizerStateEnded){
         if(backVector.x!=0||backVector.y!=0){
-            NSLog(@"back");
             [piece.superview setTransform:CGAffineTransformTranslate(piece.superview.transform, -backVector.x, -backVector.y)];
             backVector.x=0;
             backVector.y=0;
@@ -187,6 +185,8 @@
         return;
     }
     _lastRotation = [gesture rotation];
+    backVector.x=0;
+    backVector.y=0;
     
 	[self setTransform:newTransform];
 }

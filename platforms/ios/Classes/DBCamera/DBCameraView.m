@@ -15,7 +15,7 @@
 
 
 #define previewFrameRetina (CGRect){ 0, 0, 320, 480 }
-#define previewFrameRetina_4 (CGRect){ 0, 0, 320, 512 }
+#define previewFrameRetina_4 (CGRect){ 0, 0, 320, 568 }
 
 // pinch
 #define MAX_PINCH_SCALE_NUM   3.f
@@ -56,6 +56,7 @@
         _previewLayer = [[AVCaptureVideoPreviewLayer alloc] init];
         if ( captureSession ) {
             [_previewLayer setSession:captureSession];
+            NSLog(@"%i",IS_RETINA_4);
             [_previewLayer setFrame: IS_RETINA_4 ? previewFrameRetina_4 : previewFrameRetina ];
         } else
             [_previewLayer setFrame:self.bounds];

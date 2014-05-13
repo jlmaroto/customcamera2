@@ -84,10 +84,10 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
     
     NSError *error;
     if ( [self.cameraManager setupSessionWithPreset:AVCaptureSessionPresetPhoto error:&error] ) {
+        [self.cameraManager setFlashMode: AVCaptureFlashModeAuto];
         if ( self.customCamera ) {
             if ( [self.customCamera respondsToSelector:@selector(previewLayer)] ) {
                 [(AVCaptureVideoPreviewLayer *)[self.customCamera valueForKey:@"previewLayer"] setSession:self.cameraManager.captureSession];
-                
                 if ( [self.customCamera respondsToSelector:@selector(delegate)] )
                     [self.customCamera setValue:self forKey:@"delegate"];
             }

@@ -11,6 +11,11 @@
 @interface DBCameraImageView : UIImageView
 @property (nonatomic, assign) CGPoint defaultCenter;
 @property (nonatomic, assign, getter = isGesturesEnabled) BOOL gesturesEnabled;
+@property (nonatomic, assign) CGFloat rotation;
+@property (nonatomic, assign) CGFloat scale;
+@property (nonatomic, assign) CGFloat tx;
+@property (nonatomic, assign) CGFloat ty;
+
 
 - (void) resetPosition;
 - (void) setFrame2:(CGRect)frame viewport:(CGRect)viewport;
