@@ -135,7 +135,7 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
         [_closeButton setImage:[UIImage imageNamed:@"CC2_close"] forState:UIControlStateNormal];
         [_closeButton setFrame:(CGRect){ 0,  0, 30, 30 }];
         [_closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
-        [_closeButton setCenter:self.topContainerBar.center];
+        [_closeButton setCenter:CGPointMake(CGRectGetWidth (self.topContainerBar.bounds) - 32.5f, 32.5f )];
     }
     
     return _closeButton;
