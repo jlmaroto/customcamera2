@@ -64,7 +64,7 @@
 
     CDVPluginResult* result = nil;
     // save file
-    NSLog(filePath);
+    NSLog(@"%@",filePath);
     if (![data writeToFile:filePath options:NSAtomicWrite error:&err]) {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_IO_EXCEPTION messageAsString:[err localizedDescription]];
     } else {

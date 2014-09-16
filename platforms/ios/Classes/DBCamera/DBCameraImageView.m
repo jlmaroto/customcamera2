@@ -29,11 +29,19 @@
     CGPoint translationDelta;
     
     CGPoint backVector;
+    
+    int activeGestures;
 }
 
 @end
 
 @implementation DBCameraImageView
+-(void) setImage:(UIImage*) newImage {
+    [super setImage:newImage];
+    _originalImage=[newImage copy];
+}
+
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -51,6 +59,8 @@
         _rotation=0.0f;
         _lastRotation = 0.0f;
         
+        activeGestures=0;
+        
         
         corners[0]=CGPointMake(CGRectGetWidth(self.frame)/-2, CGRectGetHeight(self.frame)/-2);
         corners[1]=CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)/-2);
@@ -64,7 +74,9 @@
         UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
         UIRotationGestureRecognizer *rotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotate:)];
-        self.gestureRecognizers = @[  pinch, pan,rotate ];
+        UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+        
+        self.gestureRecognizers = @[  pinch, pan,rotate,press ];
         for (UIGestureRecognizer *recognizer in self.gestureRecognizers)
             recognizer.delegate = self;
     }
@@ -100,18 +112,52 @@
     self.transform = CGAffineTransformMakeTranslation(0, 0);
     self.transform = CGAffineTransformRotate(self.transform, 0);
     self.transform = CGAffineTransformScale(self.transform, 1, 1);
+    [self countGestureBegin];
+    [self countGestureEnd];
 }
+-(void) countGestureBegin{
+    id<DBCameraImageViewDelegate> strongDelegate = self.delegate;
+    
+    activeGestures++;
+    if (activeGestures==1&&[strongDelegate respondsToSelector:@selector(DBCameraImageView:didMove:)]) {
+        [strongDelegate DBCameraImageView:self didMove:activeGestures];
+    }
+}
+-(void) countGestureEnd{
+    id<DBCameraImageViewDelegate> strongDelegate = self.delegate;
+    
+    activeGestures--;
+    if (activeGestures==0&&[strongDelegate respondsToSelector:@selector(DBCameraImageView:didEndMove:)]) {
+        [strongDelegate DBCameraImageView:self didEndMove:activeGestures];
+    }
+}
+- (void) handleLongPress:(UILongPressGestureRecognizer *)gesture
+{
+    if ( !self.isGesturesEnabled )
+        return;
+    if(gesture.state==UIGestureRecognizerStateEnded){
+        [self countGestureEnd];
+    }else if(gesture.state==UIGestureRecognizerStateBegan){
+        [self countGestureBegin];
+    }
+}
+
 
 - (void) handlePinch:(UIPinchGestureRecognizer *)gesture
 {
     if ( !self.isGesturesEnabled )
         return;
     
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        [self countGestureBegin];
+    }
     if( gesture.state == UIGestureRecognizerStateEnded ) {
 		_lastScale = 1.0f;
 //        if ( CGRectGetWidth(self.frame) < SIZE_LIMIT || CGRectGetHeight(self.frame) < SIZE_LIMIT )
 //            [self resetPosition];
-		return;
+        [self countGestureEnd];
+        
+        return;
 	}
     
 	_scale = 1.0f - (_lastScale - [gesture scale]);
@@ -133,9 +179,12 @@
 {
 	if ( !self.isGesturesEnabled )
         return;
-    
+
     UIView *piece = [gesture view];
     
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        [self countGestureBegin];
+    }
     
     
     if ( gesture.state == UIGestureRecognizerStateBegan || gesture.state == UIGestureRecognizerStateChanged ) {
@@ -160,6 +209,7 @@
             backVector.x=0;
             backVector.y=0;
         }
+        [self countGestureEnd];
     }
     
 }
@@ -172,8 +222,12 @@
 		_lastRotation = 0.0f;
         //        if ( CGRectGetWidth(self.frame) < SIZE_LIMIT || CGRectGetHeight(self.frame) < SIZE_LIMIT )
         //            [self resetPosition];
+        [self countGestureEnd];
+        
 		return;
-	}
+	}else if(gesture.state == UIGestureRecognizerStateBegan){
+        [self countGestureBegin];
+    }
     
 	_rotation = 0.0f - (_lastRotation - [gesture rotation]);
     
@@ -230,6 +284,14 @@
             return pow(2,i+1)+1;
         }
     }
+    //test if all frontier codes are in the same side
+    int same=frontierCode[0];
+    for(int i=1;i<5;i++){
+        same=same&frontierCode[i];
+    }
+    if(same){
+        return 1;
+    }
     
     int result=0;
     for(int i=0;i<4;i++){
@@ -274,6 +336,7 @@
 
 - (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
+    
 	return YES;
 }
 

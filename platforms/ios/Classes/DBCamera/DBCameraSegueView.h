@@ -8,20 +8,28 @@
 
 #import <UIKit/UIKit.h>
 #import "DBCameraImageView.h"
+#import "DBEventlessView.h"
 
 @protocol DBCameraSegueViewDelegate;
 
 @interface DBCameraSegueView : UIView
 @property (nonatomic, weak) id <DBCameraSegueViewDelegate> delegate;
 @property (nonatomic, strong) DBCameraImageView *imageView;
+@property (nonatomic, strong) DBEventlessView *filterView;
+@property (nonatomic, strong) DBEventlessView *tempFilterView;
 @property (nonatomic, strong) UIView *stripeView;
 @property (nonatomic, strong) UIButton *retakeButton, *useButton, *cropButton;
 @property (nonatomic, strong) UIImage *_thumb;
 
+@property (nonatomic, strong) NSArray *filter;
+
+@property (nonatomic, strong) NSDictionary *capturedImageMetadata;
+
 @property (nonatomic, assign, getter = isCropModeOn) BOOL cropMode;
+@property (nonatomic,strong) UIImage *cropedImage;
 @property (nonatomic,assign, getter = getFilter, setter = setFilter:) int filterNumber;
+
 - (void) buildButtonInterface;
--(UIButton *) filterButton:(int) i;
 
 @end
 

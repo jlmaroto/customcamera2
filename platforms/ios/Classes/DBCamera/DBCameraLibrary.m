@@ -184,6 +184,7 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
                                                  withMetadata:[defaultRep metadata]];
             } else {
                 DBCameraSegueViewController *segue = [[DBCameraSegueViewController alloc] init];
+                [segue setOrigin:@"LIBRARY"];
                 [segue setCapturedImage:[image rotateUIImage]];
                 [segue setCapturedImageMetadata:[defaultRep metadata]];
                 [segue setDelegate:blockSelf.delegate];

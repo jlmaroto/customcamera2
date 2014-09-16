@@ -1,0 +1,75 @@
+[
+    {"image":"ficon_normal.jpg","title":"Normal","filter":[
+                                                      {"node":0,"type":"input","from":"camera"},
+                                                      {"node":1,"type":"effect","name":"saturation","saturation":1,"inputs":[0]},
+                                                      {"node":2,"type":"output","nodeId":1}
+                                                      ]},
+ {"image":"icon_mundaka.jpg","title":"Mundaka","filter":[
+                                                    {"node":0,"type":"input","from":"camera"},
+                                                    {"node":1,"type":"effect","name":"levels","dark":0.082,"medium":1.02,"light":0.804,"inputs":[0]},
+                                                    {"node":2,"type":"effect","name":"saturation","saturation":0.0,"inputs":[1]},
+                                                    {"node":3,"type":"output","nodeId":2}
+                                                    
+                                                    ]},
+ {"image":"icon_santacruz.jpg","title":"Santa Cruz","filter":[
+                                                       {"node":0,"type":"input","from":"camera"},
+                                                       {"node":1,"type":"input","from":"resource","name":"santacruz_lookup_1.png"},
+                                                       {"node":2,"type":"effect","name":"lookup","inputs":[0,1]},
+                                                       {"node":3,"type":"input","from":"resource","name":"santacruz_lookup_2.png"},
+                                                       {"node":4,"type":"effect","name":"lookup","inputs":[2,3]},
+                                                       {"node":5,"type":"effect","name":"saturation","saturation":0,"inputs":[4]},
+                                                       {"node":6,"type":"input","from":"resource","name":"santacruz_vineta_overlay.png"},
+                                                       {"node":7,"type":"blend","name":"overlay","inputs":[5,6]},
+                                                       {"node":8,"type":"output","nodeId":7}
+                                                       
+                                                       ]},
+ {"image":"icon_jbay.jpg","title":"J-BAY","filter":[{"node":0,"type":"input","from":"camera"},
+                                                  {"node":1,"type":"effect","name":"hue","hue":-0.14,"inputs":[0]},
+                                                  {"node":2,"type":"effect","name":"saturation","saturation":0.64,"inputs":[1]},
+                                                  {"node":3,"type":"effect","name":"brightness","brightness":0.167,"inputs":[2]},
+                                                  {"node":4,"type":"input","from":"resource","name":"gradient_overlay.png"},
+                                                  {"node":5,"type":"blend","name":"overlay","inputs":[4,3]},
+                                                  {"node":6,"type":"input","from":"resource","name":"noise_multiply.png"},
+                                                  {"node":7,"type":"blend","name":"multiply","inputs":[5,6]},
+                                                  {"node":8,"type":"input","from":"resource","name":"Gradient-Fill-multiplay.png"},
+                                                  {"node":9,"type":"blend","name":"multiply","inputs":[7,8]},
+                                                  {"node":10,"type":"output","nodeId":9}]},
+ {"image":"icon_tamarindo.jpg","title":"Tamarindo","filter":[{"node":0,"type":"input","from":"camera"},
+                                                      {"node":1,"type":"effect","name":"levels","dark":0.0196,"medium":0.88,"light":0.80392157,"inputs":[0]},
+                                                      {"node":2,"type":"effect","name":"brightness","brightness":0.167,"inputs":[1]},
+                                                      {"node":3,"type":"input","from":"resource","name":"tamarindo_lookup.png"},
+                                                      {"node":4,"type":"effect","name":"lookup","inputs":[2,3]},
+                                                      {"node":5,"type":"input","from":"resource","name":"vineta_tamarindo_overlay.png"},
+                                                      {"node":6,"type":"blend","name":"overlay","inputs":[4,5]},
+                                                      
+                                                      {"node":7,"type":"output","nodeId":6}
+                                                      ]},
+ 
+    {"image":"icon_sunset.jpg","title":"Sunset","filter":[
+                                                      {"node":0,"type":"input","from":"camera"},
+                                                      {"node":1,"type":"effect","name":"saturation","saturation":0.83,"inputs":[0]},
+                                                      {"node":2,"type":"effect","name":"levels","dark":0,"medium":1.97,"light":0.84705882,"inputs":[1]},
+                                                      {"node":3,"type":"input","from":"resource","name":"sunset_lookup_hue_colorBalance_levesl.png"},
+                                                      {"node":4,"type":"effect","name":"lookup","inputs":[0,3]},
+                                                      {"node":5,"type":"input","from":"resource","name":"sunset_gradient_overlay.png"},
+                                                      {"node":6,"type":"blend","name":"overlay","inputs":[4,5]},
+                                                      {"node":7,"type":"input","from":"resource","name":"sunset_gradient_lighten.png"},
+                                                      {"node":8,"type":"blend","name":"lighten","inputs":[6,7]},
+                                                      {"node":9,"type":"input","from":"resource","name":"sunset_texture_multiply.png"},
+                                                      {"node":10,"type":"blend","name":"lighten","inputs":[8,9]},
+                                                      {"node":11,"type":"output","nodeId":10}
+                                                      
+                                                      
+ ]},
+    {"image":"icon_ulluwatu.jpg","title":"Ulluwatu","filter":[
+                                                         {"node":0,"type":"input","from":"camera"},
+                                                        {"node":1,"type":"input","from":"resource","name":"ulluwatu_texture_1.png"},
+                                                        {"node":2,"type":"input","from":"resource","name":"ulluwatu_texture_2.png"},
+                                                        {"node":3,"type":"input","from":"color","red":1,"green":0,"blue":0.19,"alpha":1},
+                                                        {"node":4,"type":"effect","name":"levels","dark":0,"medium":1.42,"light":0.7,"inputs":[0]},
+                                                        {"node":5,"type":"blend","name":"overlay","inputs":[4,3]},
+                                                        {"node":6,"type":"blend","name":"screen","inputs":[5,1]},
+                                                        {"node":7,"type":"blend","name":"multiply","inputs":[6,2]},
+                                                        {"node":8,"type":"output","nodeId":7}
+    ]}
+]

@@ -241,6 +241,7 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
             [_delegate captureImageDidFinish:image withMetadata:metadata];
     } else {
         DBCameraSegueViewController *cameraSegueUseViewController = [[DBCameraSegueViewController alloc] init];
+        [cameraSegueUseViewController setOrigin:@"CAMERA"];
         [cameraSegueUseViewController setDelegate:self.delegate];
         [cameraSegueUseViewController setCapturedImage:image];
         [cameraSegueUseViewController setCapturedImageMetadata:metadata];

@@ -13,4 +13,7 @@
 @property (nonatomic, weak) id <DBCameraViewControllerDelegate> delegate;
 @property (nonatomic, strong) UIImage *capturedImage;
 @property (nonatomic, strong) NSDictionary *capturedImageMetadata;
+@property (nonatomic, strong) NSString *origin;
+
+-(void) setOrigin:(NSString *)origin;
 @end
