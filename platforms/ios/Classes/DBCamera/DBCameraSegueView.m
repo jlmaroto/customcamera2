@@ -200,7 +200,7 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
         [_retakeButton setImage:[UIImage imageNamed:@"CC2_back"] forState:UIControlStateNormal];
         [_retakeButton setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         [_retakeButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-        [_retakeButton setFrame:(CGRect){ buttonMargin, 15, 38 , 34 }];
+        [_retakeButton setFrame:(CGRect){ buttonMargin, 17, 38 , 34 }];
     }
     
     return _retakeButton;
