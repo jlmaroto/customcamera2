@@ -268,6 +268,12 @@
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_sunset.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_tamarindo.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_ulluwatu.jpg"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_safi.jpg"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_tehauppo.jpg"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_kirra.jpg"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_noronha.jpg"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_coxos.jpg"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_pipeline.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/J-BAY/Gradient-Fill-multiplay.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/J-BAY/gradient_overlay.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/J-BAY/noise_multiply.png"/>
@@ -285,6 +291,21 @@
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/ulluwatu/ULLUWATU_lookup.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/ulluwatu/ulluwatu_texture_1.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/ulluwatu/ulluwatu_texture_2.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/SAFI/safi_lookup.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/SAFI/safi_RUIDO_multiply.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/SAFI/safi_vinete_overlay.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/TEHAUPPO/tehauppo_vineta_overlay.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/TEHAUPPO/tehauppo_LOOKUP.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/KIRRA/KIRRA_vineta_overlay.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/KIRRA/kirra_lookup.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/NORONHA/noronha_texture_screen.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/NORONHA/noronha_lookup.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/COXOS/COXOS_vineta_soft_light.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/COXOS/coxos_lookup.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/pipeline_lookup.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/Pipeline_grandient_multiply.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/pipeline_ruido_multiply.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/"/>
 
 	<framework src="QuartzCore.framework"/>
 	<framework src="CoreMedia.framework"/>
