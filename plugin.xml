@@ -72,6 +72,12 @@
 	<!--GPUImage used for filters-->
 	<header-file src="platforms/ios/Classes/GPUImage/GLProgram.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImage.h"/>
+        <header-file src="platforms/ios/Classes/GPUImage/GPUImageContext.h"/>
+        <header-file src="platforms/ios/Classes/GPUImage/GPUImageHistogramEqualizationFilter.h"/>
+        <header-file src="platforms/ios/Classes/GPUImage/GPUImageMovieWriter.h"/>
+        <header-file src="platforms/ios/Classes/GPUImage/GPUImagePicture+TextureSubimage.h"/>
+        <header-file src="platforms/ios/Classes/GPUImage/GPUImagePicture.h"/>
+        <header-file src="platforms/ios/Classes/GPUImage/GPUImageView.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImage3x3ConvolutionFilter.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImage3x3TextureSamplingFilter.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImageAdaptiveThresholdFilter.h"/>
@@ -229,12 +235,7 @@
         <header-file src="platforms/ios/Classes/GPUImage/GPUImageWhiteBalanceFilter.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImageXYDerivativeFilter.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImageZoomBlurFilter.h"/>
-        <header-file src="platforms/ios/Classes/GPUImage/iOS/GPUImageContext.h"/>
-        <header-file src="platforms/ios/Classes/GPUImage/iOS/GPUImageMovieWriter.h"/>
-        <header-file src="platforms/ios/Classes/GPUImage/iOS/GPUImagePicture+TextureSubimage.h"/>
-        <header-file src="platforms/ios/Classes/GPUImage/iOS/GPUImagePicture.h"/>
-        <header-file src="platforms/ios/Classes/GPUImage/iOS/GPUImageView.h"/>
-        <source-file src="platforms/ios/Classes/GPUImage/iOS/lib/GPUImage.a"/>        
+        <source-file src="platforms/ios/Classes/GPUImage/lib/libGPUImage.a"/>        
 
 	<resource-file src="platforms/ios/Classes/DBCamera/Localizations/es.lproj/DBCamera.strings" targetDir="Resources/es.lproj"/>
         <resource-file src="platforms/ios/Classes/DBCamera/Resources/DBCameraImages.xcassets"/>
