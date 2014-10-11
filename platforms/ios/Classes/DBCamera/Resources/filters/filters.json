@@ -71,56 +71,56 @@
                                                         {"node":7,"type":"blend","name":"multiply","inputs":[6,2]},
                                                         {"node":8,"type":"output","nodeId":7}
     ]},
-    {"image":"icon_safi.jpg","title":"Safi”,”filter":[
+    {"image":"icon_safi.jpg","title":"Safi","filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"safi_lookup.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"safi_RUIDO_multiply.png"},
-                                                        {"node”:3,”type":"input","from":"resource","name":"safi_vinete_overlay.png"},
-                                                        {"node”:4,”type":"blend","name":"overlay","inputs”:[0,3]},
-                                                        {"node":5,"type":"blend","name":"multiply","inputs”:[4,2]},
-                                                        {"node":6,"type”:”effect”,”name”:”lookup”,”inputs":[5,1]},
-                                                        {"node”:7,”type":"output","nodeId”:6}
+                                                        {"node":3,"type":"input","from":"resource","name":"safi_vinete_overlay.png"},
+                                                        {"node":4,"type":"blend","name":"overlay","inputs":[0,3]},
+                                                        {"node":5,"type":"blend","name":"multiply","inputs":[4,2]},
+                                                        {"node":6,"type":"effect","name":"lookup","inputs":[5,1]},
+                                                        {"node":7,"type":"output","nodeId":6}
     ]},
-    {"image":"icon_tehauppo.jpg","title”:”Tehauppo”,”filter":[
+    {"image":"icon_tehauppo.jpg","title":"Tehauppo","filter":[
                                                         {"node":0,"type":"input","from":"camera"},
-                                                        {"node”:1,”type":"input","from":"resource","name":"tehauppo_vineta_overlay.png"},
-                                                        {"node”:2,”type":"input","from":"resource","name":"tehauppo_LOOKUP.png”},
-                                                        {"node”:3,”type":"blend","name":"overlay","inputs”:[0,1]},
-                                                        {"node”:4,”type”:”effect”,”name”:”lookup”,”inputs”:[3,2]},
-                                                        {"node”:5,”type":"output","nodeId”:4}
+                                                        {"node":1,"type":"input","from":"resource","name":"tehauppo_vineta_overlay.png"},
+                                                        {"node":2,"type":"input","from":"resource","name":"tehauppo_LOOKUP.png"},
+                                                        {"node":3,"type":"blend","name":"overlay","inputs":[0,1]},
+                                                        {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
+                                                        {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_kirra.jpg","title”:”Kirra”,”filter":[
+    {"image":"icon_kirra.jpg","title":"Kirra","filter":[
                                                         {"node":0,"type":"input","from":"camera"},
-                                                        {"node”:1,”type":"input","from":"resource","name":"KIRRA_vineta_overlay.png"},
-                                                        {"node”:2,”type":"input","from":"resource","name":"kirra_lookup.png”},
-                                                        {"node”:3,”type":"blend","name":"overlay","inputs”:[0,1]},
-                                                        {"node”:4,”type”:”effect”,”name”:”lookup”,”inputs”:[3,2]},
-                                                        {"node”:5,”type":"output","nodeId”:4}
+                                                        {"node":1,"type":"input","from":"resource","name":"KIRRA_vineta_overlay.png"},
+                                                        {"node":2,"type":"input","from":"resource","name":"kirra_lookup.png"},
+                                                        {"node":3,"type":"blend","name":"overlay","inputs":[0,1]},
+                                                        {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
+                                                        {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_noronha.jpg","title”:”Noronha”,”filter":[
+    {"image":"icon_noronha.jpg","title":"Noronha","filter":[
                                                         {"node":0,"type":"input","from":"camera"},
-                                                        {"node”:1,”type":"input","from":"resource","name":"noronha_texture_screen.png"},
-                                                        {"node”:2,”type":"input","from":"resource","name":"noronha_lookup.png”},
-                                                        {"node”:3,”type":"blend","name”:”screen”,”inputs”:[0,1]},
-                                                        {"node”:4,”type”:”effect”,”name”:”lookup”,”inputs”:[3,2]},
-                                                        {"node”:5,”type":"output","nodeId”:4}
+                                                        {"node":1,"type":"input","from":"resource","name":"noronha_texture_screen.png"},
+                                                        {"node":2,"type":"input","from":"resource","name":"noronha_lookup.png"},
+                                                        {"node":3,"type":"blend","name":"screen","inputs":[0,1]},
+                                                        {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
+                                                        {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_coxos.jpg","title”:”Coxos”,”filter":[
+    {"image":"icon_coxos.jpg","title":"Coxos","filter":[
                                                         {"node":0,"type":"input","from":"camera"},
-                                                        {"node”:1,”type":"input","from":"resource","name":"COXOS_vineta_soft_light.png"},
-                                                        {"node”:2,”type":"input","from":"resource","name":"coxos_lookup.png”},
-                                                        {"node”:3,”type":"blend","name":"lighten","inputs”:[0,1]},
-                                                        {"node”:4,”type”:”effect”,”name”:”lookup”,”inputs”:[3,2]},
-                                                        {"node”:5,”type":"output","nodeId”:4}
+                                                        {"node":1,"type":"input","from":"resource","name":"COXOS_vineta_soft_light.png"},
+                                                        {"node":2,"type":"input","from":"resource","name":"coxos_lookup.png"},
+                                                        {"node":3,"type":"blend","name":"lighten","inputs":[0,1]},
+                                                        {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
+                                                        {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_pipeline.jpg","title”:”Pipeline”,”filter":[
+    {"image":"icon_pipeline.jpg","title":"Pipeline","filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"pipeline_lookup.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"Pipeline_grandient_multiply.png"},
-                                                        {"node”:3,”type":"input","from":"resource","name":"pipeline_ruido_multiply.png"},
-                                                        {"node”:4,”type":"blend","name":"overlay","inputs”:[0,2]},
-                                                        {"node":5,"type":"blend","name":"multiply","inputs”:[4,3]},
-                                                        {"node":6,"type”:”effect”,”name”:”lookup”,”inputs":[5,1]},
-                                                        {"node”:7,”type":"output","nodeId”:6}
+                                                        {"node":3,"type":"input","from":"resource","name":"pipeline_ruido_multiply.png"},
+                                                        {"node":4,"type":"blend","name":"overlay","inputs":[0,2]},
+                                                        {"node":5,"type":"blend","name":"multiply","inputs":[4,3]},
+                                                        {"node":6,"type":"effect","name":"lookup","inputs":[5,1]},
+                                                        {"node":7,"type":"output","nodeId":6}
     ]}
 ]
