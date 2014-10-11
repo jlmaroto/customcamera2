@@ -235,7 +235,7 @@
         <header-file src="platforms/ios/Classes/GPUImage/GPUImageWhiteBalanceFilter.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImageXYDerivativeFilter.h"/>
         <header-file src="platforms/ios/Classes/GPUImage/GPUImageZoomBlurFilter.h"/>
-        <source-file src="platforms/ios/Classes/GPUImage/lib/libGPUImage.a"/>        
+        <source-file src="platforms/ios/Classes/GPUImage/lib/libGPUImage.a" framework="true" />        
 
 	<resource-file src="platforms/ios/Classes/DBCamera/Localizations/es.lproj/DBCamera.strings" targetDir="Resources/es.lproj"/>
         <resource-file src="platforms/ios/Classes/DBCamera/Resources/DBCameraImages.xcassets"/>
