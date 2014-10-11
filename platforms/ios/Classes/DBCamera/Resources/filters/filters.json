@@ -9,7 +9,6 @@
                                                     {"node":1,"type":"effect","name":"levels","dark":0.082,"medium":1.02,"light":0.804,"inputs":[0]},
                                                     {"node":2,"type":"effect","name":"saturation","saturation":0.0,"inputs":[1]},
                                                     {"node":3,"type":"output","nodeId":2}
-                                                    
                                                     ]},
  {"image":"icon_santacruz.jpg","title":"Santa Cruz","filter":[
                                                        {"node":0,"type":"input","from":"camera"},
