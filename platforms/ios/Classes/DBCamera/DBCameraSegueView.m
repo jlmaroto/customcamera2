@@ -95,6 +95,17 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
         
         _bottomStripe = [[StripeView alloc] initWithFrame:(CGRect){ 0, 385, CGRectGetWidth(frame), CGRectGetHeight(frame)-385 }];
         
+        _filterStrength = [[UISlider alloc] initWithFrame:(CGRect){ 10, 0,CGRectGetWidth(frame)-20,CGRectGetHeight(frame)-385 -114}];
+        [_filterStrength setMinimumValue:0];
+        [_filterStrength setMaximumValue:1];
+        _filterStrength.hidden=true;
+        _filterStrength.continuous=true;
+        _filterStrength.minimumTrackTintColor=RGBColor(0x19aca8, 1);
+        
+        [_filterStrength  addTarget:self action:@selector(filterStrengthChange) forControlEvents:UIControlEventValueChanged];
+        
+        [_bottomStripe addSubview:_filterStrength];
+        
         _collectionView = [[UICollectionView alloc] initWithFrame:(CGRect){ 0, CGRectGetHeight(frame)-385 -114, CGRectGetWidth(frame), 114 } collectionViewLayout:[[DBFilterCollectionViewFlowLayout alloc] init]];
         
         
@@ -142,7 +153,10 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
                                              options:kNilOptions
                                                error:&error];
     
-    
+    _filterStrengths=[[NSMutableDictionary alloc] init];
+    for (NSDictionary* filter in _items) {
+        [_filterStrengths setObject:[NSNumber numberWithFloat:[[filter objectForKey:@"strength"] floatValue]] forKey:[filter objectForKey:@"title"]];
+    }
     [_collectionView reloadData];
     NSIndexPath *selection = [NSIndexPath indexPathForItem:0 inSection:0];
     [_collectionView selectItemAtIndexPath:selection animated:YES scrollPosition:UICollectionViewScrollPositionNone];
@@ -165,6 +179,11 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
     //[self addSubview:self.cropButton];
     
     
+}
+- (void) filterStrengthChange
+{
+    _filterView.alpha = _filterStrength.value;
+    [_filterStrengths setObject: [NSNumber numberWithFloat:_filterStrength.value] forKey:_filterTitle];
 }
 
 - (UIView *) stripeView
@@ -242,7 +261,7 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
                           delay:0.0
                         options:UIViewAnimationCurveEaseInOut
                      animations:^ {
-                         _filterView.alpha = 1.0;
+                         _filterView.alpha = _filterStrength.value;
                      }
                      completion:^(BOOL finished) {
                          
@@ -292,19 +311,27 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
     
     NSDictionary *filtro= _items[indexPath.item];
     _filter=((NSArray *)[filtro objectForKey:@"filter"]);
+    _filterTitle=[filtro objectForKey:@"title"];
     
     UIImage *proxy=[self filterImage:_cropedImage];
     [_tempFilterView setImage:_filterView.filteredImage];
-    _tempFilterView.alpha=1.0;
+    _tempFilterView.alpha=_filterStrength.value;
     _tempFilterView.hidden=false;
     _filterView.alpha=0.0;
     [_filterView setFilteredImage:proxy];
+    
+    if([[_filterStrengths objectForKey:_filterTitle] floatValue]!=-1){
+        _filterStrength.hidden=false;
+        [_filterStrength setValue:[[_filterStrengths objectForKey:_filterTitle ] floatValue] animated:TRUE];
+    }else{
+        _filterStrength.hidden=true;
+    }
     
     [UIView animateWithDuration:0.2
                           delay:0.0
                         options:UIViewAnimationCurveEaseInOut
                      animations:^ {
-                         _filterView.alpha = 1.0;
+                         _filterView.alpha = _filterStrength.value;
                          _tempFilterView.alpha=0.0;
                      }
                      completion:^(BOOL finished) {
@@ -334,11 +361,13 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
                     }else{
                         [results setObject:input  atIndexedSubscript:[[step objectForKey:@"node"] integerValue]];
                     }
+                    [input processImage];
                 }else if ([[step objectForKey:@"from"] isEqual:@"resource"]) {
                     GPUImagePicture *resource=[[GPUImagePicture alloc] initWithImage:[UIImage imageNamed:[step objectForKey:@"name"]]] ;
                     [resource processImage];
                     [results setObject:resource atIndexedSubscript:[[step objectForKey:@"node"] integerValue]];
                     [inputPictures addObject:resource];
+                    [resource processImage];
                 }else if ([[step objectForKey:@"from"] isEqual:@"color"]) {
                     GPUImageSolidColorGenerator* generator = [GPUImageSolidColorGenerator new];
                     [generator setColorRed:[[step objectForKey:@"red"] floatValue] green:[[step objectForKey:@"green"] floatValue] blue:[[step objectForKey:@"blue"] floatValue] alpha:[[step objectForKey:@"alpha"] floatValue]];
@@ -376,9 +405,18 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
                     GPUImageMultiplyBlendFilter *multiply = [[GPUImageMultiplyBlendFilter alloc] init];
                     
                     NSArray *inputs=[step objectForKey:@"inputs"];
+                    int j=0;
                     for(id i in inputs){
-                        [[results objectAtIndex:[i intValue]] addTarget:multiply];
-                        
+                        if(j==0){
+                            [[results objectAtIndex:[i intValue]] addTarget:multiply];
+                        }else{
+                            GPUImageOpacityFilter* opacityFilter = [[GPUImageOpacityFilter alloc] init];
+                            opacityFilter.opacity = 1;
+                            
+                            [[results objectAtIndex:[i intValue]] addTarget:opacityFilter];
+                            [opacityFilter addTarget:multiply];
+                        }
+                        j++;
                     }
                     [results setObject:multiply  atIndexedSubscript:[[step objectForKey:@"node"] integerValue]];
                 }else if ([[step objectForKey:@"name"] isEqual:@"lighten"]) {

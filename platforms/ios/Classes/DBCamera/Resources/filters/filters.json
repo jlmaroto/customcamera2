@@ -1,16 +1,16 @@
 [
-    {"image":"ficon_normal.jpg","title":"Normal","filter":[
+    {"image":"ficon_normal.jpg","title":"No filter","strength":-1,"filter":[
                                                       {"node":0,"type":"input","from":"camera"},
                                                       {"node":1,"type":"effect","name":"saturation","saturation":1,"inputs":[0]},
                                                       {"node":2,"type":"output","nodeId":1}
                                                       ]},
- {"image":"icon_mundaka.jpg","title":"Mundaka","filter":[
+ {"image":"icon_mundaka.jpg","title":"Mundaka","strength":1,"filter":[
                                                     {"node":0,"type":"input","from":"camera"},
                                                     {"node":1,"type":"effect","name":"levels","dark":0.082,"medium":1.02,"light":0.804,"inputs":[0]},
                                                     {"node":2,"type":"effect","name":"saturation","saturation":0.0,"inputs":[1]},
                                                     {"node":3,"type":"output","nodeId":2}
                                                     ]},
- {"image":"icon_santacruz.jpg","title":"Santa Cruz","filter":[
+ {"image":"icon_santacruz.jpg","title":"Santa Cruz","strength":1,"filter":[
                                                        {"node":0,"type":"input","from":"camera"},
                                                        {"node":1,"type":"input","from":"resource","name":"santacruz_lookup_1.png"},
                                                        {"node":2,"type":"effect","name":"lookup","inputs":[0,1]},
@@ -22,18 +22,18 @@
                                                        {"node":8,"type":"output","nodeId":7}
                                                        
                                                        ]},
- {"image":"icon_jbay.jpg","title":"J-BAY","filter":[{"node":0,"type":"input","from":"camera"},
+ {"image":"icon_jbay.jpg","title":"J-Bay","strength":1,"filter":[{"node":0,"type":"input","from":"camera"},
                                                   {"node":1,"type":"effect","name":"hue","hue":-0.14,"inputs":[0]},
                                                   {"node":2,"type":"effect","name":"saturation","saturation":0.64,"inputs":[1]},
                                                   {"node":3,"type":"effect","name":"brightness","brightness":0.167,"inputs":[2]},
                                                   {"node":4,"type":"input","from":"resource","name":"gradient_overlay.png"},
-                                                  {"node":5,"type":"blend","name":"overlay","inputs":[4,3]},
+                                                  {"node":5,"type":"blend","name":"overlay","inputs":[3,4]},
                                                   {"node":6,"type":"input","from":"resource","name":"noise_multiply.png"},
                                                   {"node":7,"type":"blend","name":"multiply","inputs":[5,6]},
                                                   {"node":8,"type":"input","from":"resource","name":"Gradient-Fill-multiplay.png"},
                                                   {"node":9,"type":"blend","name":"multiply","inputs":[7,8]},
                                                   {"node":10,"type":"output","nodeId":9}]},
- {"image":"icon_tamarindo.jpg","title":"Tamarindo","filter":[{"node":0,"type":"input","from":"camera"},
+ {"image":"icon_tamarindo.jpg","title":"Tamarindo","strength":1,"filter":[{"node":0,"type":"input","from":"camera"},
                                                       {"node":1,"type":"effect","name":"levels","dark":0.0196,"medium":0.88,"light":0.80392157,"inputs":[0]},
                                                       {"node":2,"type":"effect","name":"brightness","brightness":0.167,"inputs":[1]},
                                                       {"node":3,"type":"input","from":"resource","name":"tamarindo_lookup.png"},
@@ -44,7 +44,7 @@
                                                       {"node":7,"type":"output","nodeId":6}
                                                       ]},
  
-    {"image":"icon_sunset.jpg","title":"Sunset","filter":[
+    {"image":"icon_sunset.jpg","title":"Sunset","strength":1,"filter":[
                                                       {"node":0,"type":"input","from":"camera"},
                                                       {"node":1,"type":"effect","name":"saturation","saturation":0.83,"inputs":[0]},
                                                       {"node":2,"type":"effect","name":"levels","dark":0,"medium":1.97,"light":0.84705882,"inputs":[1]},
@@ -60,7 +60,7 @@
                                                       
                                                       
  ]},
-    {"image":"icon_ulluwatu.jpg","title":"Ulluwatu","filter":[
+    {"image":"icon_ulluwatu.jpg","title":"Ulluwatu","strength":1,"filter":[
                                                          {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"ulluwatu_texture_1.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"ulluwatu_texture_2.png"},
@@ -71,7 +71,7 @@
                                                         {"node":7,"type":"blend","name":"multiply","inputs":[6,2]},
                                                         {"node":8,"type":"output","nodeId":7}
     ]},
-    {"image":"icon_safi.jpg","title":"Safi","filter":[
+    {"image":"icon_safi.jpg","title":"Safi","strength":1,"filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"safi_lookup.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"safi_RUIDO_multiply.png"},
@@ -81,7 +81,7 @@
                                                         {"node":6,"type":"effect","name":"lookup","inputs":[5,1]},
                                                         {"node":7,"type":"output","nodeId":6}
     ]},
-    {"image":"icon_tehauppo.jpg","title":"Tehauppo","filter":[
+    {"image":"icon_tehauppo.jpg","title":"Teahupo'o","strength":1,"filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"tehauppo_vineta_overlay.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"tehauppo_LOOKUP.png"},
@@ -89,7 +89,7 @@
                                                         {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
                                                         {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_kirra.jpg","title":"Kirra","filter":[
+    {"image":"icon_kirra.jpg","title":"Kirra","strength":1,"filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"KIRRA_vineta_overlay.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"kirra_lookup.png"},
@@ -97,7 +97,7 @@
                                                         {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
                                                         {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_noronha.jpg","title":"Noronha","filter":[
+    {"image":"icon_noronha.jpg","title":"Noronha","strength":1,"filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"noronha_texture_screen.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"noronha_lookup.png"},
@@ -105,7 +105,7 @@
                                                         {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
                                                         {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_coxos.jpg","title":"Coxos","filter":[
+    {"image":"icon_coxos.jpg","title":"Coxos","strength":1,"filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"COXOS_vineta_soft_light.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"coxos_lookup.png"},
@@ -113,7 +113,7 @@
                                                         {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
                                                         {"node":5,"type":"output","nodeId":4}
     ]},
-    {"image":"icon_pipeline.jpg","title":"Pipeline","filter":[
+    {"image":"icon_pipeline.jpg","title":"Pipeline","strength":1,"filter":[
                                                         {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"pipeline_lookup.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"Pipeline_grandient_multiply.png"},

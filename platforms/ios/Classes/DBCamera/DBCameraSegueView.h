@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UIView *stripeView;
 @property (nonatomic, strong) UIButton *retakeButton, *useButton, *cropButton;
 @property (nonatomic, strong) UIImage *_thumb;
+@property (nonatomic, strong) UISlider *filterStrength;
 
 @property (nonatomic, strong) NSArray *filter;
 
@@ -28,6 +29,8 @@
 @property (nonatomic, assign, getter = isCropModeOn) BOOL cropMode;
 @property (nonatomic,strong) UIImage *cropedImage;
 @property (nonatomic,assign, getter = getFilter, setter = setFilter:) int filterNumber;
+@property (nonatomic,strong) NSString *filterTitle;
+@property (nonatomic,strong) NSMutableDictionary *filterStrengths;
 
 - (void) buildButtonInterface;
 
