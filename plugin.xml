@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:rim="http://www.blackberry.com/ns/widgets"
 	id="com.peanutbuttercolective.custom-camera2"
-	version="0.0.1">
+	version="0.9.0">
 
 <name>Custom Camera 2</name>
 <description>PhoneGap plugin to support a custom camera overlay and camera roll picker</description>
