@@ -120,8 +120,6 @@
         if ( [_delegate respondsToSelector:@selector(captureImageDidFinish:withMetadata:)] ){
             
             if(cameraView.filterView.filteredImage!=nil){
-            [_delegate captureImageDidFinish:cameraView.filterView.filteredImage withMetadata:newDict];
-            }else{
                 [_delegate captureImageDidFinish:[[UIImage screenshotFromView:self.view] croppedImage:(CGRect){ 0, 130, 640, 640 }] withMetadata:newDict];
             }
         }
