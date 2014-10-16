@@ -338,9 +338,11 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
 
 - (void) applicationDidEnterBackground:(NSNotification *)notification
 {
-    id modalViewController = self.presentingViewController;
+    /* don't want the camera dissmis photo upon any interruption
+     id modalViewController = self.presentingViewController;
     if ( modalViewController )
         [self dismissCamera];
+    */
 }
 
 @end
