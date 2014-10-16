@@ -271,6 +271,7 @@
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_safi.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_tehauppo.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_kirra.jpg"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_chiba.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_noronha.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_coxos.jpg"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/icon_pipeline.jpg"/>
@@ -286,6 +287,7 @@
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/sunset/sunset_lookup.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/sunset/sunset_lookup_hue_colorBalance_levesl.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/sunset/sunset_texture_multiply.png"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/chiba/chiba_lookup.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/tamarindo/tamarindo_lookup.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/tamarindo/vineta_tamarindo_overlay.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/ulluwatu/ULLUWATU_lookup.png"/>
