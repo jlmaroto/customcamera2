@@ -118,10 +118,15 @@
         [newDict addEntriesFromDictionary: self.capturedImageMetadata];
         [newDict setObject:orientation forKey:@"Orientation"];
         if ( [_delegate respondsToSelector:@selector(captureImageDidFinish:withMetadata:)] ){
-            
-            if(cameraView.filterView.filteredImage!=nil){
-                [_delegate captureImageDidFinish:[[UIImage screenshotFromView:self.view] croppedImage:(CGRect){ 0, 130, 640, 640 }] withMetadata:newDict];
-            }
+            [UIView animateWithDuration:0.0
+                             animations:^{
+                                 _containerView.filterStrength.hidden=true;
+                             }
+                             completion:^(BOOL finished) {
+                                 if(cameraView.filterView.filteredImage!=nil){
+                                     [_delegate captureImageDidFinish:[[UIImage screenshotFromView:self.view] croppedImage:(CGRect){ 0, 130, 640, 640 }] withMetadata:newDict];
+                                 }
+                             }];
         }
     } else if ( [_delegate respondsToSelector:@selector(captureImageDidFinish:withMetadata:)] )
         [_delegate captureImageDidFinish:self.capturedImage withMetadata:self.capturedImageMetadata];

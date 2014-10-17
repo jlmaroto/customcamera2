@@ -95,7 +95,12 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
         
         _bottomStripe = [[StripeView alloc] initWithFrame:(CGRect){ 0, 385, CGRectGetWidth(frame), CGRectGetHeight(frame)-385 }];
         
-        _filterStrength = [[UISlider alloc] initWithFrame:(CGRect){ 10, 0,CGRectGetWidth(frame)-20,CGRectGetHeight(frame)-385 -114}];
+        if(IS_RETINA_4){
+            _filterStrength = [[UISlider alloc] initWithFrame:(CGRect){ 10, 0,CGRectGetWidth(frame)-20,CGRectGetHeight(frame)-385 -114}];
+        }else{
+            _filterStrength = [[UISlider alloc] initWithFrame:(CGRect){ 10, 345,CGRectGetWidth(frame)-20,40}];
+        }
+        
         [_filterStrength setMinimumValue:0];
         [_filterStrength setMaximumValue:1];
         _filterStrength.hidden=true;
@@ -104,10 +109,17 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
         
         [_filterStrength  addTarget:self action:@selector(filterStrengthChange) forControlEvents:UIControlEventValueChanged];
         
-        [_bottomStripe addSubview:_filterStrength];
+        if(IS_RETINA_4){
+            [_bottomStripe addSubview:_filterStrength];
+        }else{
+            [self addSubview:_filterStrength];
+        }
         
-        _collectionView = [[UICollectionView alloc] initWithFrame:(CGRect){ 0, CGRectGetHeight(frame)-385 -114, CGRectGetWidth(frame), 114 } collectionViewLayout:[[DBFilterCollectionViewFlowLayout alloc] init]];
-        
+        if(IS_RETINA_4){
+            _collectionView = [[UICollectionView alloc] initWithFrame:(CGRect){ 0, CGRectGetHeight(frame)-385 -114, CGRectGetWidth(frame), 114 } collectionViewLayout:[[DBFilterCollectionViewFlowLayout alloc] init]];
+        }else{
+            _collectionView = [[UICollectionView alloc] initWithFrame:(CGRect){ 0, 1, CGRectGetWidth(frame), 114 } collectionViewLayout:[[DBFilterCollectionViewFlowLayout alloc] init]];
+        }
         
         [_collectionView setAutoresizingMask:UIViewAutoresizingNone];
         [_collectionView setDelegate:self];
@@ -369,9 +381,9 @@ NSLocalizedStringFromTable(key, @"DBCamera", nil)
                     [inputPictures addObject:resource];
                     [resource processImage];
                 }else if ([[step objectForKey:@"from"] isEqual:@"color"]) {
-                    GPUImageSolidColorGenerator* generator = [GPUImageSolidColorGenerator new];
+                    GPUImageSolidColorGenerator* generator = [[GPUImageSolidColorGenerator alloc] init];
+                    [generator forceProcessingAtSize:CGSizeMake(640.0,640.0)];
                     [generator setColorRed:[[step objectForKey:@"red"] floatValue] green:[[step objectForKey:@"green"] floatValue] blue:[[step objectForKey:@"blue"] floatValue] alpha:[[step objectForKey:@"alpha"] floatValue]];
-                    [generator forceProcessingAtSize:_imageView.originalImage.size];
                    
                     [results setObject:generator atIndexedSubscript:[[step objectForKey:@"node"] integerValue]];
 

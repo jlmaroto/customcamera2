@@ -30,7 +30,11 @@
 - (UIImageView *) itemImage
 {
     if( !_itemImage ) {
-        _itemImage = [[UIImageView alloc] initWithFrame:(CGRect){ 10, 14, self.frame.size.width-20, self.frame.size.width-20 }];
+        if(IS_RETINA_4){
+            _itemImage = [[UIImageView alloc] initWithFrame:(CGRect){ 10, 14, self.frame.size.width-20, self.frame.size.width-20 }];
+        }else{
+            _itemImage = [[UIImageView alloc] initWithFrame:(CGRect){ 10, 6, self.frame.size.width-20, self.frame.size.width-20 }];
+        }
         [_itemImage setBackgroundColor:[UIColor clearColor]];
         [_itemImage setContentMode:UIViewContentModeScaleAspectFill];
         [_itemImage setClipsToBounds:YES];
@@ -52,7 +56,11 @@
 - (UILabel *) itemLabel
 {
     if(!_itemLabel){
-        _itemLabel = [[UILabel alloc] initWithFrame:(CGRect){1,CGRectGetWidth([self bounds])+5,CGRectGetWidth([self bounds])-2,15}];
+        if(IS_RETINA_4){
+            _itemLabel = [[UILabel alloc] initWithFrame:(CGRect){1,CGRectGetWidth([self bounds])+5,CGRectGetWidth([self bounds])-2,15}];
+        }else{
+            _itemLabel = [[UILabel alloc] initWithFrame:(CGRect){1,CGRectGetWidth([self bounds]),CGRectGetWidth([self bounds])-2,15}];
+        }
         [_itemLabel setBackgroundColor:[UIColor clearColor]];
         [_itemLabel setTintColor:[UIColor whiteColor]];
         [_itemLabel setAdjustsFontSizeToFitWidth:YES];
