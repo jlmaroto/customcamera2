@@ -123,9 +123,7 @@
                                  _containerView.filterStrength.hidden=true;
                              }
                              completion:^(BOOL finished) {
-                                 if(cameraView.filterView.filteredImage!=nil){
-                                     [_delegate captureImageDidFinish:[[UIImage screenshotFromView:self.view] croppedImage:(CGRect){ 0, 130, 640, 640 }] withMetadata:newDict];
-                                 }
+                                 [_delegate captureImageDidFinish:[[UIImage screenshotFromView:self.view] croppedImage:(CGRect){ 0, 130, 640, 640 }] withMetadata:newDict];
                              }];
         }
     } else if ( [_delegate respondsToSelector:@selector(captureImageDidFinish:withMetadata:)] )
