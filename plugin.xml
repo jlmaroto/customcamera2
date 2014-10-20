@@ -307,7 +307,7 @@
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/pipeline_lookup.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/Pipeline_grandient_multiply.png"/>
 	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/pipeline_ruido_multiply.png"/>
-	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/"/>
+	<resource-file src="platforms/ios/Classes/DBCamera/Resources/filters/Pipeline/pipeline_vineta_overlay.png"/>
 
 	<framework src="QuartzCore.framework"/>
 	<framework src="CoreMedia.framework"/>
