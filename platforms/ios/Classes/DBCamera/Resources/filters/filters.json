@@ -5,7 +5,7 @@
                                                       {"node":2,"type":"output","nodeId":1}
                                                                          ]},
  {"image":"icon_sunset.jpg","title":"Sunset",
- "strength":0.5,
+ "strength":1,
  "filter":[
            {"node":0,"type":"input","from":"camera"},
            {"node":1,"type":"effect","name":"saturation","saturation":0.83,"inputs":[0]},
@@ -34,7 +34,7 @@
                                                        {"node":8,"type":"output","nodeId":7}
                                                        
                                                        ]},
- {"image":"icon_tamarindo.jpg","title":"Tamarindo","strength":0.5,"filter":[{"node":0,"type":"input","from":"camera"},
+ {"image":"icon_tamarindo.jpg","title":"Tamarindo","strength":1,"filter":[{"node":0,"type":"input","from":"camera"},
                                                                           {"node":1,"type":"effect","name":"levels","dark":0.0196,"medium":0.88,"light":0.80392157,"inputs":[0]},
                                                                           {"node":2,"type":"effect","name":"brightness","brightness":0.167,"inputs":[1]},
                                                                           {"node":3,"type":"input","from":"resource","name":"tamarindo_lookup.png"},
@@ -58,7 +58,7 @@
                                                                       {"node":3,"type":"output","nodeId":2}
                                                                       ]},
 
- {"image":"icon_jbay.jpg","title":"J-Bay","strength":0.5,"filter":[{"node":0,"type":"input","from":"camera"},
+ {"image":"icon_jbay.jpg","title":"J-Bay","strength":1,"filter":[{"node":0,"type":"input","from":"camera"},
                                                   {"node":1,"type":"input","from":"resource","name":"gradient_overlay.png"},
                                                   {"node":2,"type":"blend","name":"overlay","inputs":[0,1]},
                                                   {"node":3,"type":"input","from":"resource","name":"noise_multiply.png"},
@@ -71,7 +71,7 @@
                                                   {"node":10,"type":"output","nodeId":9}]},
  
  
-    {"image":"icon_ulluwatu.jpg","title":"Ulluwatu","strength":0.5,"filter":[
+    {"image":"icon_ulluwatu.jpg","title":"Ulluwatu","strength":1,"filter":[
                                                          {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"ulluwatu_texture_1.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"ulluwatu_texture_2.png"},
@@ -82,7 +82,7 @@
                                                         {"node":7,"type":"blend","name":"multiply","inputs":[6,2]},
                                                         {"node":8,"type":"output","nodeId":7}
     ]},
- {"image":"icon_kirra.jpg","title":"Kirra","strength":0.5,"filter":[
+ {"image":"icon_kirra.jpg","title":"Kirra","strength":1,"filter":[
                                                                   {"node":0,"type":"input","from":"camera"},
                                                                   {"node":1,"type":"input","from":"resource","name":"KIRRA_vineta_overlay.png"},
                                                                   {"node":2,"type":"input","from":"resource","name":"kirra_lookup.png"},
