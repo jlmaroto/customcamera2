@@ -4,20 +4,8 @@
                                                       {"node":1,"type":"effect","name":"saturation","saturation":1,"inputs":[0]},
                                                       {"node":2,"type":"output","nodeId":1}
                                                                          ]},
- {"image":"icon_pipeline.jpg","title":"Pipeline","strength":1,"filter":[
-                                                                        {"node":0,"type":"input","from":"camera"},
-                                                                        {"node":1,"type":"input","from":"resource","name":"pipeline_vineta_overlay.png"},
-                                                                        {"node":2,"type":"input","from":"resource","name":"pipeline_ruido_multiply.png"},
-                                                                        {"node":3,"type":"input","from":"resource","name":"Pipeline_grandient_multiply.png"},
-                                                                        {"node":4,"type":"input","from":"resource","name":"pipeline_lookup.png"},
-                                                                        {"node":5,"type":"blend","name":"overlay","inputs":[0,1]},
-                                                                        {"node":6,"type":"blend","name":"multiply","inputs":[5,2]},
-                                                                        {"node":7,"type":"blend","name":"multiply","inputs":[6,3]},
-                                                                        {"node":8,"type":"effect","name":"lookup","inputs":[7,4]},
-                                                                        {"node":9,"type":"output","nodeId":8}
-                                                                        ]},
  {"image":"icon_sunset.jpg","title":"Sunset",
- "strength":1,
+ "strength":0.5,
  "filter":[
            {"node":0,"type":"input","from":"camera"},
            {"node":1,"type":"effect","name":"saturation","saturation":0.83,"inputs":[0]},
@@ -46,7 +34,7 @@
                                                        {"node":8,"type":"output","nodeId":7}
                                                        
                                                        ]},
- {"image":"icon_tamarindo.jpg","title":"Tamarindo","strength":1,"filter":[{"node":0,"type":"input","from":"camera"},
+ {"image":"icon_tamarindo.jpg","title":"Tamarindo","strength":0.5,"filter":[{"node":0,"type":"input","from":"camera"},
                                                                           {"node":1,"type":"effect","name":"levels","dark":0.0196,"medium":0.88,"light":0.80392157,"inputs":[0]},
                                                                           {"node":2,"type":"effect","name":"brightness","brightness":0.167,"inputs":[1]},
                                                                           {"node":3,"type":"input","from":"resource","name":"tamarindo_lookup.png"},
@@ -69,26 +57,8 @@
                                                                       {"node":2,"type":"effect","name":"saturation","saturation":0.0,"inputs":[1]},
                                                                       {"node":3,"type":"output","nodeId":2}
                                                                       ]},
- {"image":"icon_coxos.jpg","title":"Coxos","strength":1,"filter":[
-                                                                  {"node":0,"type":"input","from":"camera"},
-                                                                  {"node":1,"type":"input","from":"resource","name":"COXOS_vineta_soft_light.png"},
-                                                                  {"node":2,"type":"input","from":"resource","name":"coxos_lookup.png"},
-                                                                  {"node":3,"type":"blend","name":"lighten","inputs":[0,1]},
-                                                                  {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
-                                                                  {"node":5,"type":"output","nodeId":4}
-                                                                  ]},
- {"image":"icon_safi.jpg","title":"Safi","strength":1,"filter":[
-                                                                {"node":0,"type":"input","from":"camera"},
-                                                                {"node":1,"type":"input","from":"resource","name":"safi_lookup.png"},
-                                                                {"node":2,"type":"input","from":"resource","name":"safi_RUIDO_multiply.png"},
-                                                                {"node":3,"type":"input","from":"resource","name":"safi_vinete_overlay.png"},
-                                                                {"node":4,"type":"effect","name":"lookup","inputs":[0,1]},
-                                                                {"node":5,"type":"blend","name":"multiply","inputs":[4,2]},
-                                                                {"node":6,"type":"blend","name":"overlay","inputs":[5,3]},
-                                                                {"node":7,"type":"output","nodeId":6}
-                                                                ]},
 
- {"image":"icon_jbay.jpg","title":"J-Bay","strength":1,"filter":[{"node":0,"type":"input","from":"camera"},
+ {"image":"icon_jbay.jpg","title":"J-Bay","strength":0.5,"filter":[{"node":0,"type":"input","from":"camera"},
                                                   {"node":1,"type":"input","from":"resource","name":"gradient_overlay.png"},
                                                   {"node":2,"type":"blend","name":"overlay","inputs":[0,1]},
                                                   {"node":3,"type":"input","from":"resource","name":"noise_multiply.png"},
@@ -101,7 +71,7 @@
                                                   {"node":10,"type":"output","nodeId":9}]},
  
  
-    {"image":"icon_ulluwatu.jpg","title":"Ulluwatu","strength":1,"filter":[
+    {"image":"icon_ulluwatu.jpg","title":"Ulluwatu","strength":0.5,"filter":[
                                                          {"node":0,"type":"input","from":"camera"},
                                                         {"node":1,"type":"input","from":"resource","name":"ulluwatu_texture_1.png"},
                                                         {"node":2,"type":"input","from":"resource","name":"ulluwatu_texture_2.png"},
@@ -112,13 +82,7 @@
                                                         {"node":7,"type":"blend","name":"multiply","inputs":[6,2]},
                                                         {"node":8,"type":"output","nodeId":7}
     ]},
- {"image":"icon_chiba.jpg","title":"Chiba","strength":1,"filter":[
-                                                                         {"node":0,"type":"input","from":"camera"},
-                                                                         {"node":1,"type":"input","from":"resource","name":"chiba_lookup.png"},
-                                                                         {"node":2,"type":"effect","name":"lookup","inputs":[0,1]},
-                                                                         {"node":3,"type":"output","nodeId":2}
-                                                                  ]},
- {"image":"icon_kirra.jpg","title":"Kirra","strength":1,"filter":[
+ {"image":"icon_kirra.jpg","title":"Kirra","strength":0.5,"filter":[
                                                                   {"node":0,"type":"input","from":"camera"},
                                                                   {"node":1,"type":"input","from":"resource","name":"KIRRA_vineta_overlay.png"},
                                                                   {"node":2,"type":"input","from":"resource","name":"kirra_lookup.png"},
@@ -126,12 +90,4 @@
                                                                   {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
                                                                   {"node":5,"type":"output","nodeId":4}
                                                                   ]},
-    {"image":"icon_tehauppo.jpg","title":"Teahupo'o","strength":1,"filter":[
-                                                                            {"node":0,"type":"input","from":"camera"},
-                                                                            {"node":1,"type":"input","from":"resource", "name":"tehauppo_vineta_overlay.png"},
-                                                                            {"node":2,"type":"input","from":"resource","name":"tehauppo_LOOKUP.png"},
-                                                                            {"node":3,"type":"blend","name":"overlay","inputs":[0,1]},
-                                                                            {"node":4,"type":"effect","name":"lookup","inputs":[3,2]},
-                                                                            {"node":5,"type":"output","nodeId":4}
-    ]}
 ]
